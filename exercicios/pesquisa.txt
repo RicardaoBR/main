@@ -1,0 +1,16 @@
+HTML --> html traduzindo é  "HyperText Markup Language", para que serve?
+Usamos esta linguagem para a criação de paginas web, obtendo 
+imagens,links,textos,videos, multiplas variações em exibição
+no site.
+
+CSS --> css traduzindo "Cascading Style Sheets" para que serve? 
+Ele é um mecanismo para criar O CSS ajuda a editar, alinhar, remover 
+e trabalhar no espaço entre elementos de uma página, junto com o html, 
+Também é possível, adicionar estilos adicionando um link 
+para um arquivo CSS que contém os estilos.
+
+Java Script --> Java Script oque é? 
+Java Script é uma linguagem de programação muito usada no mundo inteiro 
+sendo entre as 8 mais famosas, ela é usada para  incluir comportamento 
+interativo às páginas web, criar aplicativos web e móveis, criar servidores web 
+e desenvolver aplicativos de servidor, assim como, desenvolver jogos.
