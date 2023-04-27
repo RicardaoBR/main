@@ -8,6 +8,7 @@ body > header{
     padding: 16px 0px;
     background-color: black;
     color:#97caec;
+    display: flex;
 }
 
 h1{
@@ -68,7 +69,8 @@ section h2, .articles article{
 }
 p{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+    font-weight: 509;
+    
 }
 
 .articles article a{
@@ -90,6 +92,6 @@ p{
 }
 #games3{
     background-color: grey  
-     
+    
 }
 
