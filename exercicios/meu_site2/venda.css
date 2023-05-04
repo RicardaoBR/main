@@ -6,7 +6,7 @@
 
 body > header{
     padding: 16px 0px;
-    background-color: black;
+    background-color: #ff66c4;
     display:flex;
 }
 
@@ -40,9 +40,7 @@ header .container img{
 header li{
     display: inline;
     margin-left: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 999;
-    
+    color:black;
 }
 
 p{
@@ -60,8 +58,9 @@ p{
     margin-top: 8px;  
 }
 
+
 header li a{
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -86,14 +85,21 @@ header li a{
 }
 
 body{
-    background-color: gray;
+    background-color: whitesmoke;
 }
 
 
+body a{
+    color: black;
+    text-decoration: none;
+    margin: 8px;
+    justify-content: right;
+}
+
 footer {
     padding: 7px 0;
-    background-color: black;
-    color: #ecf0f1;
+    background-color: #ff66c4;
+    color: black;
     text-align: center;
 }
 
