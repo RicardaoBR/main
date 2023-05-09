@@ -1,0 +1,37 @@
+numero = prompt("Digite o numero que quer fatorial: " )
+resposta = 1
+for (let i = 1; i <= numero; i++) {
+    resposta = resposta * i
+}
+console.log(resposta)
+
+let dia_semana = 4;
+
+switch (dia_semana){
+    case 1:
+        semana = "Domingo";
+        break;
+    case 2:
+        semana = "Segunda";
+        break;
+    case 3:
+        semana = "Terça";
+        break;
+    case 4:
+        semana = "Quarta";
+        break;
+    case 5:
+        semana = "Quinta";
+        break;
+    case 6:
+        semana = "Sexta";
+        break;
+    case 7:
+        semana = "Sábado";
+        break;
+    default:
+        semana = "Valor inválido!!";
+
+}
+
+alert(semana);

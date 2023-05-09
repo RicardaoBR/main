@@ -1,0 +1,12 @@
+let numTab = 0, tamTab = 0, cont = 1;
+numTab = parseInt(prompt("Informe o n da tabuada:"));
+tamTab = prompt("Informe o tamanho da tabuada:");
+
+    tabuada(numTab,tamTab);
+
+function tabuada(numTab, tamTab){
+       for (let cont = 1; cont <= tamTab; cont++) {
+        numTab * cont;
+        console.log(numTab + " x " + cont + " = " + (numTab * cont));
+    }
+}
