@@ -1,6 +1,5 @@
 
-console.log(num1.value);
-console.log(num2.value);
+let resultado = document.getElementById('resultado');
 
 addEventListener('submit', function(e){
 
@@ -8,10 +7,10 @@ addEventListener('submit', function(e){
     let num2 = parseInt(document.getElementById("num2").value);
 
     if(num1 > num2){
-        alert("Primeiro é maior");
+        return resultado.innerHTML = "Primeiro é maior";
     }else if(num2 > num1){
-        return alert("Segundo é maior");
+        return resultado.innerHTML = "Segundo é Maior";
     }else{
-        return alert("São iguais")
+        return resultado.innerHTML = "Os números são iguais";
     }
 })
