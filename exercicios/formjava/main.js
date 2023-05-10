@@ -1,8 +1,11 @@
 addEventListener('submit', function(e){
-    parseInt(num1);
+
+    let num1 = parseInt(document.getElementById("numero1").value);
+    let num2 = parseInt(document.getElementById("numero2").value);
+
     if(num1 > num2){
-        return alert("Primeiro é maior");
+        alert("Primeiro é maior");
     }else if(num2 > num1){
-        return alert("Segundo é maior");
+        alert("Segundo é maior");
     }
 })
