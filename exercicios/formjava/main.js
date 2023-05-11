@@ -1,16 +1,23 @@
 
+const form = document.getElementById('form_dep');
 
-addEventListener('submit', function(e){
+form.addEventListener('submit', function(e){
 
-    var nome = document.getElementById('nome').value;
-    var cadeado = document.getElementById('cadeado').value;
-    var usuario = document.getElementById('usuario').value;
-    var senha = document.getElementById('senha').value;
+    let nome = document.getElementById('nome').value;
+    let cadeado = document.getElementById('cadeado').value;
+    let usuario = document.getElementById('usuario').value;
+    let senha = document.getElementById('senha').value;
 
-    if(nome != "Joao"){
+    if(nome.value != "Joao"){
+
         usuario.style.display = 'block';
-    }
-    if(cadeado != "123"){  
+        document.querySelector('.usuario').style.display = 'block';
+
+    }else if(cadeado.value != "123"){  
+
         senha.style.display = 'block';   
+        document.querySelector('.usuario').style.display = 'block';
+
     }
+    
 })
