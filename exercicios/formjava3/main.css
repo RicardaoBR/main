@@ -12,7 +12,8 @@
 }
 
 header{
-    padding: 4px;
+    padding: 8px;
+    color: white;
     background-color: black;
     text-align: center;
 }
@@ -21,11 +22,19 @@ p{
     background-color: #2ccc71;
     padding: 5px;
     border-radius: 8px;
+    display: none;
+    margin-bottom: 6px;
 }
 
-.usuario{
-    display: none;
-    
+h3{
+    background-color: #fff;
+    padding: 8px;
+    text-align: center;
+}
+
+h3 img{
+    width: 50px;
+    align-content:center;
 }
 
 .senha{
@@ -66,4 +75,6 @@ footer{
     padding: 4px;
     background-color: black;
     text-align: center;
+    color: white;
+    
 }
