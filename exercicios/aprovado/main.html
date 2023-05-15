@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="./main.css"/>
 </head>
 <body>
+    <div class="container">
     <header>
         <img src="/Midia/chapeu.png"/>
         <h1>Resultado do Aluno</h1>
     </header>
-    <form>
-        <input type="text" required placeholder="Nome da atividade">
-        <input type="number" required placeholder="Nota da atividade">
+    <form id="form_atividade">
+        <input type="text" id="nome_atividade"required placeholder="Nome da atividade">
+        <input type="number" id="not_atividade"required placeholder="Nota da atividade" min="0" max="10"/>
         <button type="submit">Adicionar +</button>
     </form>
-    <table>
+    <table cellspacing="0">
         <thead>
             <tr>
                 <th>
@@ -35,21 +36,23 @@
             <tr>
                 <td>Ativade 1</td>  
                 <td>7</td>    
-                <td><img src="/Midia/aprovado.png" alt="Emoji festejando"/></td>      
+                <td><img src="/Midia/aprovado.png" alt="Aprovado"/></td>      
             </tr>
             <tr>
                 <td>Ativade 2</td>  
                 <td>5.6</td>    
-                <td><img src="/Midia/reprovado.png" alt="Emoji desapontado"/></td>      
+                <td><img src="/Midia/reprovado.png" alt="reprovado"/></td>      
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td>Nota Média</td>
                 <td>19.6</td>
-                <td>Aprovado</td>
+                <td><span class="resultado aprovado">Aprovado</span></td>
             </tr>
         </tfoot>
     </table>
+    </div>
+    <script src="./main.js"></script>
 </body>
 </html>

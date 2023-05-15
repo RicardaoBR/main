@@ -11,6 +11,11 @@
     width: 100%;
 }
 
+#aprovado, #aprovado_imagem{
+    display: inline;
+    border-radius: 8px;
+}
+
 header{
     padding: 8px;
     color: white;
@@ -30,16 +35,13 @@ h3{
     background-color: #fff;
     padding: 8px;
     text-align: center;
+    border-radius: 8px;
 }
 
-h3 img{
-    width: 50px;
-    align-content:center;
-}
-
-.senha{
-    display: none;
-    margin-bottom: 4px;
+#logo{
+    display: inline;
+    width: 35px;
+    margin-right: 9px;
 }
 
 form{
@@ -76,5 +78,4 @@ footer{
     background-color: black;
     text-align: center;
     color: white;
-    
 }

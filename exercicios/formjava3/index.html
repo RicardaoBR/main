@@ -12,7 +12,7 @@
         Meu Site
     </header>
     <div class="container">
-        <h1>School Web Site</h1>
+        <h1 id="logo">School Web Site</h1><img id="logo"src="/Midia/chapeu.png"/>
         <h2>Saiba sua Média</h2>
         <form id="form_dep">
             <h2>Nota</h2>
@@ -20,14 +20,11 @@
                 <input type="number" id="nota" placeholder="digite sua nota"/>
                 <p id="nota_inteira"></p>
                 <button onclick="adicionando()">Adicionar</button>
-                <button onclick="limparLixo()">limpar</button>
             </div>
             <button onclick="media()">Média</button>
             <p id="resultado_mostrar"></p>
             <br/>
-            <div>
-                <h3 id="aprovado"></h3><img id="aprovado_imagem"src=" "/>
-            </div>
+            <h3 id="aprovado"></h3><img id="aprovado_imagem"src=" "/>
         </form>
     </div>
     <script src="./main.js"></script>
