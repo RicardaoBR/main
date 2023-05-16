@@ -16,4 +16,7 @@ form.addEventListener('submit', function(e){
 
     const corpoTabela = document.querySelector('tbody')
     corpoTabela.innerHTML = linha;
+
+    inputNomeAtividade = '';
+    inputNotaAtividade = '';
 })

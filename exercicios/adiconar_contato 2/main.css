@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(/Midia/bakground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.container{
+    align-items: center;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button, input{
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+    margin: 10px;
+}
+
+button{
+    background-color: #ff2574;
+}
+
+#ponto{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80
+}
