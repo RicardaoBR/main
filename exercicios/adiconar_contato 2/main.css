@@ -16,9 +16,6 @@ body{
     max-width: 640px;
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
@@ -27,10 +24,14 @@ button, input{
     border: none;
     padding: 8px;
     margin: 10px;
+    display: inline-block;
+    margin-top: 50%;
+    cursor: pointer;
 }
 
 button{
     background-color: #ff2574;
+    display: inline;
 }
 
 #ponto{

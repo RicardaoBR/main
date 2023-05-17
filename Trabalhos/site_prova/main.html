@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <link rel="stylesheet" href="./main.css"/>
+</head>
+<body>
+    <div class="container">
+        <form id="form_dep">
+            <label>Nome</label>
+            <input type="text" id="nome" required placeholder="digite seu nome">
+            <label>Valor</label>
+            <input type="number "id="valor" required placeholder="digite o valor pago">
+            <label>Loja</label>
+            <input type="text" id="loja" required placeholder="digite o nome da loja">
+            <label>Avaliação</label>
+            <textarea id="avaliaçao"></textarea>
+            <br/>
+            <label>Atendimento</label>
+            <select>
+                <option>Me senti o Bolsonaro</option>
+                <option>Muito bom</option>
+                <option>Bom</option>
+                <option>Não gostei</option>
+                <option>Muito Ruim</option>
+                <option>Pior que Atendimento do SUS</option>
+            </select><br/>
+            <br/>
+            <button id="fazer_reclamaçao" type="submit">Enviar</button>
+        </form>
+        <form id="form_reclamaçoes">
+            <label id="nome2"></label>
+            <p id="loja2"></p><br/>
+            <p id="valor2"></p><br/>
+            <p id="avaliaçao2"></p>
+            <p id="atendimento2"></p>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

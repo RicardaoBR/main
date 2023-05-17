@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    color: white;
+    background-color: pink;
+    padding: 8px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.container > form{
+    justify-content: center;
+    margin-top: 15%;
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 15%;
+}
+
+#form_reclamações{
+    display: none;
+}
+
+form, input, textarea, button{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+input, textarea{
+    display: block;
+    padding-right: 300px;
+    cursor: pointer;
+}
+
+textarea{
+    padding-right: 317px;
+}
+
+
+form{
+    background-color: grey;
+    margin: 8px;
+}
