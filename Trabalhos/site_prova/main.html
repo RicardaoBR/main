@@ -17,27 +17,15 @@
             <label>Loja</label>
             <input type="text" id="loja" required placeholder="digite o nome da loja">
             <label>Avaliação</label>
-            <textarea id="avaliaçao"></textarea>
+            <textarea rows="10" style="resize: none" id="avaliaçao"></textarea>
             <br/>
-            <label>Atendimento</label>
-            <select>
-                <option>Me senti o Bolsonaro</option>
-                <option>Muito bom</option>
-                <option>Bom</option>
-                <option>Não gostei</option>
-                <option>Muito Ruim</option>
-                <option>Pior que Atendimento do SUS</option>
-            </select><br/>
+            <label>Atendimento Geral</label>
+            <input type="text" id="atendimento" required placeholder="digite como foi atendido">
+            
             <br/>
             <button id="fazer_reclamaçao" type="submit">Enviar</button>
         </form>
-        <form id="form_reclamaçoes">
-            <label id="nome2"></label>
-            <p id="loja2"></p><br/>
-            <p id="valor2"></p><br/>
-            <p id="avaliaçao2"></p>
-            <p id="atendimento2"></p>
-        </form>
+        
     </div>
     <script src="main.js"></script>
 </body>
