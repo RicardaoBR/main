@@ -46,7 +46,7 @@ header li a{
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
 }
 
 .articles article img{
