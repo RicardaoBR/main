@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    padding: 15px;
+    background-color: pink;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+ul{
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+    width: 25%;
+    height: 120px;
+    overflow: hidden;
+    margin: 1%;
+}
+
+ul li img{
+    width: 100%;
+}
+
+
