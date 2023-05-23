@@ -45,13 +45,17 @@
         </div>
     </header>
     <div id="carrossel_imagens">
-        <img src="" alt="Porsche Carrera">
-        <img src="" alt="Carro da BMW">
-        <img src="" alt="Ford GT">
+        <img src="/Midia/slide1.png" alt="Porsche Carrera">
+        <img src="/Midia/slide2.png" alt="Carro da BMW">
+        <img src="/Midia/slide3.png" alt="Ford GT">
     </div>
     <section id="sobre_a_loja"></section>
     <div class="container container_flex">
-        <img src="/Midia/loja.png" alt="fachada loja" />
+        <div id="frente_loja">
+            <img src="/Midia/loja.png" alt="fachada loja" />
+            <img src="/Midia/frente_loja2.png" alt="fachada loja" />
+            <img src="/Midia/frente_loja3.png" alt="fachada loja" />
+        </div>
         <div id="sobre">
             <h2>Sobre a loja</h2>
             <p>
@@ -77,9 +81,11 @@
             <ul class="container_flex lista_veiculos">
                 <li>
                     <h3>Carro BMW</h3>
-                    <img src="/Midia/carro_loja1.png" alt="BMW" />
+                    <div id="carro_mostrar">
+                        <img src="/Midia/carro_loja1.png" alt="BMW" />
+                    </div>
                     <p>
-                        Cambio Automático, 4 Portas, Vidros e travas elétricas
+                        Carro esportivo de luxo com design aerodinâmico e motor potente.
                     </p>
                     <strong>R$ 180.000,00</strong>
                     <button type="button">Tenho Interesse</button>
@@ -88,7 +94,7 @@
                     <h3>Carro BMW</h3>
                     <img src="/Midia/carro_loja2.png" alt="BMW" />
                     <p>
-                        Cambio Automático, 4 Portas, Vidros e travas elétricas
+                        SUV robusto com tração nas quatro rodas, perfeito para aventuras off-road.
                     </p>
                     <strong>R$ 276.000,00</strong>
                     <button type="button">Tenho Interesse</button>
@@ -97,7 +103,7 @@
                     <h3>Carro BMW</h3>
                     <img src="/Midia/carro_loja3.png" alt="BMW" />
                     <p>
-                        Cambio Automático, 4 Portas, Vidros e travas elétricas
+                        Sedã elegante e espaçoso, com acabamento sofisticado e tecnologia avançada.
                     </p>
                     <strong>R$ 304.000,00</strong>
                     <button type="button">Tenho Interesse</button>
@@ -115,7 +121,7 @@
                     <h3>Carro BMW</h3>
                     <img src="/Midia/carro_loja5.png" alt="BMW" />
                     <p>
-                        Cambio Automático, 4 Portas, Vidros e travas elétricas
+                        Carro compacto e ágil, ideal para a cidade, com excelente economia de combustível
                     </p>
                     <strong>R$ 789.000,00</strong>
                     <button type="button">Tenho Interesse</button>
@@ -130,12 +136,124 @@
                     <button type="button">Tenho Interesse</button>
                 </li>
             </ul>
+            <h2>Em Promoção</h2>
+            <ul class="container_flex lista_veiculos">
+                <li>
+                    <h3>Carro BMW</h3>
+                    <div id="carro_mostrar">
+                        <img src="/Midia/carro1.png" alt="BMW" />
+                    </div>
+                    <p>
+                        Carro esportivo de luxo com design aerodinâmico e motor potente.
+                    </p>
+                    <strong><strong id="promoçao">- (30k) </strong>R$ 180.000,00</strong>
+                    <button type="button">Tenho Interesse</button>
+                </li>
+                <li class="item_central">
+                    <h3>Carro BMW</h3>
+                    <img src="/Midia/carro2.png" alt="BMW" />
+                    <p>
+                        SUV robusto com tração nas quatro rodas, perfeito para aventuras off-road.
+                    </p>
+                    <strong><strong id="promoçao">- (89k)</strong> R$ 211.000,00</strong>
+                    <button type="button">Tenho Interesse</button>
+                </li>
+                <li>
+                    <h3>Carro BMW</h3>
+                    <img src="/Midia/carro3.png" alt="BMW" />
+                    <p>
+                        Sedã elegante e espaçoso, com acabamento sofisticado e tecnologia avançada.
+                    </p>
+                    <strong><strong id="promoçao">- (110k) </strong>R$ 323.000,00</strong>
+                    <button type="button">Tenho Interesse</button>
+                </li>
+                <li>
+                    <h3>Carro BMW</h3>
+                    <img src="/Midia/carro4.png" alt="BMW" />
+                    <p>
+                        Cambio Automático, 4 Portas, Vidros e travas elétricas
+                    </p>
+                    <strong><strong id="promoçao">- (520k) </strong>R$ 265.000,00</strong>
+                    <button type="button">Tenho Interesse</button>
+                </li>
+                <li class="item_central">
+                    <h3>Carro BMW</h3>
+                    <img src="/Midia/carro5.png" alt="BMW" />
+                    <p>
+                        Carro compacto e ágil, ideal para a cidade, com excelente economia de combustível
+                    </p>
+                    <strong><strong id="promoçao">- (150k) </strong>R$ 789.000,00</strong>
+                    <button type="button">Tenho Interesse</button>
+                </li>
+                <li>
+                    <h3>Carro BMW</h3>
+                    <img src="/Midia/carro6.png" alt="BMW" />
+                    <p>
+                        Cambio Automático, 4 Portas, Vidros e travas elétricas
+                    </p>
+                    <strong><strong id="promoçao">- (90k)</strong> R$ 455.000,00</strong>
+                    <button type="button">Tenho Interesse</button>
+                </li>
+            </ul>
         </div>
     </section>
+    <section id="formulario">
+        <div class="container">
+            <h2>Entre em contato:</h2>
+            <form>
+                <div class="form_campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome">
+                </div>
+                <div class="form_campo">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone">
+                </div>
+                <div class="form_campo">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form_campo">
+                    <label for="veiculo_interesse">Veículo:</label>
+                    <input type="text" id="veiculo_interesse">
+                </div>
+                <div class="form_campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container container_flex">
+            <p>
+                2023 © SENAC Motors - Todos os direitos reservados
+            </p>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="/Midia/facebook.png" alt="Facebook_ Logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/Midia/instagram.png" alt="Instagram_Logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/Midia/youtube.png" alt="Youtube_Logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
     <script src="main.js"></script>
 </body>
 

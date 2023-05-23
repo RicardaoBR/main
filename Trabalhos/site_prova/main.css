@@ -1,75 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-repeat: no-repeat;
-    background-image: url(/Midia/bakground.png);
-    background-size: cover;
-}
-
-header{
-    color: white;
-    background-color: pink;
-    padding: 8px;
+#seçoes{
+    background-color: red;
+    max-width: 150px;
+    height: 200px;
+    display: block;
     text-align: center;
-    font-size: 30px;
+}
+
+hr{
     color: black;
-}
-
-.container > form{
-    justify-content: center;
-    display: block;
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top: 15%;
-}
-
-#form_reclamaçoes{
-    display: none;
-}
-
-form, input, textarea, button{
-    display: block;
-    align-items: center;
-    justify-content: center;
-    margin: 4px;
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-}
-
-label{
-    color: white;
-}
-
-input:hover, textarea:hover, button:hover{
-    opacity: 0.9;
-    background: white;
-    transition: 500ms linear; 
-}
-
-
-input, textarea{
-    display: block;
-    padding-right: 300px;
-    cursor: pointer;
-    opacity: 0.5;
-}
-
-button{
-    background-color: #3939C6;
-    cursor: pointer;
-;}
-
-textarea{
-    padding-right: 310px;
-}
-
-
-form{
-    margin: 8px;
+    background-color: black;
 }
