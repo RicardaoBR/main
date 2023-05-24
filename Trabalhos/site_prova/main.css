@@ -5,15 +5,144 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#seçoes{
-    background-color: red;
-    max-width: 150px;
-    height: 200px;
-    display: block;
-    text-align: center;
+.container {
+    width: 140px;
+    height: 100px;
+    display: flex;
 }
 
-hr{
-    color: black;
-    background-color: black;
+header {
+    background-color: rgb(52, 67, 71);
+    text-align: center;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+header img {
+    width: 80px;
+}
+
+#seçoes {
+    background-color: rgb(52, 67, 71);
+    width: 130px;
+    height: 900px;
+    display: block;
+    text-align: center;
+    margin: 8px;
+    border-radius: 16px;
+}
+
+#seçoes img {
+    max-width: 50px;
+}
+
+
+#seçao_pessoal {
+    background-color: bisque;
+    padding: 8px;
+    transition: 500ms;
+    border-radius: 10px 10px 0 0;
+}
+
+#seçao_galeria {
+    background-color: bisque;
+    padding: 8px;
+    transition: 500ms;
+}
+
+#seçao_filmes {
+    background-color: bisque;
+    padding: 8px;
+    transition: 500ms;
+}
+
+#seçao_livros {
+    background-color: bisque;
+    padding: 8px;
+    transition: 500ms;
+}
+
+#seçao_escritas {
+    background-color: bisque;
+    padding: 8px;
+    transition: 500ms;
+}
+
+#seçao_pessoal:hover,
+#seçao_galeria:hover,
+#seçao_filmes:hover,
+#seçao_livros:hover,
+#seçao_escritas:hover {
+    margin-right: -20px;
+}
+
+ul {
+    list-style: none;
+    width: 130px;
+
+}
+
+body::-webkit-scrollbar {
+    width: 13px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(52, 67, 71);
+    border-radius: 20px;
+    border: 3px solid #fff;
+}
+
+#seçao_pessoal_pagina {
+    margin-top: 8px;
+    margin-left: 20px;
+    background-color: lightblue;
+    padding: 450px;
+    width: 500px;
+    height: 30px;
+    border-radius: 8px;
+    display: none;
+}
+
+#seçao_galeria_pagina {
+    margin-top: 8px;
+    margin-left: 20px;
+    background-color: lightcoral;
+    padding: 450px;
+    width: 500px;
+    height: 30px;
+    border-radius: 8px;
+    display: none;
+}
+
+#seçao_filmes_pagina {
+    margin-top: 8px;
+    margin-left: 20px;
+    background-color: lightgreen;
+    padding: 450px;
+    width: 500px;
+    height: 30px;
+    border-radius: 8px;
+    display: none;
+}
+
+#seçao_livros_pagina {
+    margin-top: 8px;
+    margin-left: 20px;
+    background-color: lightsalmon;
+    padding: 450px;
+    width: 500px;
+    height: 30px;
+    border-radius: 8px;
+    display: none;
+}
+
+#seçao_escritas_pagina {
+    margin-top: 8px;
+    margin-left: 20px;
+    background-color: lightsalmon;
+    padding: 450px;
+    width: 500px;
+    height: 30px;
+    border-radius: 8px;
+    display: none;
 }

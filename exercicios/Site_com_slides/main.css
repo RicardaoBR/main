@@ -186,6 +186,11 @@ strong {
 
 }
 
+#formulario textarea, #formulario input{
+    border-radius: 3px;
+    border: none;
+    padding: 6px;
+}
 
 .form_campo textarea {
     resize: none;

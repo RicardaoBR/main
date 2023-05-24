@@ -1,17 +1,52 @@
-const form = document.getElementById('form_dep');
-var vetor = [];
+$(document).ready(function () {
 
-form.addEventListener('submit', function(e){
+    $('#carrossel_imagens').slick({
+        autoplay: true,
+        arrows: false,
+    })
 
-    event.preventDefault();
-    vetor.push(document.getElementById('nome').value);
-    vetor.push(document.getElementById('valor').value);
-    vetor.push(document.getElementById('loja').value);
-    vetor.push(document.getElementById('avaliaçao').value);
+    $('#seçao_pessoal').click(function () {
+        $('#seçao_pessoal_pagina').hide(1000);
+        if ($('#seçao_pessoal_pagina').is(':hidden')) {
+            $('#seçao_pessoal_pagina').show(1000);
+        }
+        if ($('#seçao_galeria_pagina' || '#seçao_filmes_pagina' || '#seçao_livros_pagina' || 'seçao_escritas_pagina').is(':visible')) {
+            $('#seçao_galeria_pagina', '#seçao_filmes_pagina', '#seçao_livros_pagina', 'seçao_escritas_pagina').hide(1000);
+        }
+    })
 
-    document.getElementById('nome2').innerHTML = vetor[0];
-    document.getElementById('loja2').innerHTML = vetor[1];
-    document.getElementById('valor2').innerHTML = vetor[2];
-    document.getElementById('avaliaçao').innerHTML = vetor[3];
-    
+    $('#seçao_galeria').click(function () {
+        $('#seçao_galeria_pagina').hide(1000);
+        if ($('#seçao_galeria_pagina').is(':hidden')) {
+            $('#seçao_galeria_pagina').show(1000);
+        }
+    })
+
+    $('#seçao_filmes').click(function () {
+        $('#seçao_filmes_pagina').hide(1000);
+        if ($('#seçao_filmes_pagina').is(':hidden')) {
+            $('#seçao_filmes_pagina').show(1000);
+        }
+    })
+
+    $('#seçao_livros').click(function () {
+        $('#seçao_livros_pagina').hide(1000);
+        if ($('#seçao_livros_pagina').is(':hidden')) {
+            $('#seçao_livros_pagina').show(1000);
+        }
+    })
+
+    $('#seçao_escritas').click(function () {
+        $('#seçao_escritas_pagina').hide(1000);
+        if ($('#seçao_escritas_pagina').is(':hidden')) {
+            $('#seçao_escritas_pagina').show(1000);
+        }
+    })
+
+
+
+
+    $('#telefone').mask('(00)00000-0000', {
+        placeholder: '(12)34567-8901'
+    })
 })
