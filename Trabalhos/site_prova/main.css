@@ -6,9 +6,11 @@
 }
 
 .container {
-    width: 140px;
-    height: 100px;
     display: flex;
+}
+
+body{
+    background-color: black;
 }
 
 header {
@@ -25,7 +27,6 @@ header img {
 #seçoes {
     background-color: rgb(52, 67, 71);
     width: 130px;
-    height: 900px;
     display: block;
     text-align: center;
     margin: 8px;
@@ -84,23 +85,25 @@ ul {
 
 body::-webkit-scrollbar {
     width: 13px;
+    display: none;
 }
 
 body::-webkit-scrollbar-thumb {
     background-color: rgb(52, 67, 71);
     border-radius: 20px;
     border: 3px solid #fff;
+    display: none;
 }
 
 #seçao_pessoal_pagina {
     margin-top: 8px;
     margin-left: 20px;
-    background-color: lightblue;
+    background-color: lightcoral;
     padding: 450px;
-    width: 500px;
-    height: 30px;
     border-radius: 8px;
+    width: 100%;
     display: none;
+    margin-right: 8px;
 }
 
 #seçao_galeria_pagina {
@@ -108,21 +111,22 @@ body::-webkit-scrollbar-thumb {
     margin-left: 20px;
     background-color: lightcoral;
     padding: 450px;
-    width: 500px;
-    height: 30px;
     border-radius: 8px;
+    width: 100%;
     display: none;
+    margin-right: 8px;
 }
+
 
 #seçao_filmes_pagina {
     margin-top: 8px;
     margin-left: 20px;
     background-color: lightgreen;
     padding: 450px;
-    width: 500px;
-    height: 30px;
     border-radius: 8px;
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #seçao_livros_pagina {
@@ -130,19 +134,34 @@ body::-webkit-scrollbar-thumb {
     margin-left: 20px;
     background-color: lightsalmon;
     padding: 450px;
-    width: 500px;
-    height: 30px;
     border-radius: 8px;
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #seçao_escritas_pagina {
     margin-top: 8px;
     margin-left: 20px;
-    background-color: lightsalmon;
+    background-color: lightpink;
     padding: 450px;
-    width: 500px;
-    height: 30px;
     border-radius: 8px;
     display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#usuario_perfil{
+    background-color: white;
+    max-width: 200px;
+    padding: 20px;
+    margin-top: -600px;
+    margin-left: -600px;
+    margin: 0;
+}
+
+#usuario_foto{
+    background-color: white;
+    max-width: 200px;
+    padding: 20px;
 }
