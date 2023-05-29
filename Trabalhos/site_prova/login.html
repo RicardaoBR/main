@@ -20,7 +20,7 @@
 
 <body>
     <div class="container">
-        <div class="form_dep">
+        <div class="form_criar_conta">
             <ul>
                 <li>
                     Digite o seu Nome completo
@@ -29,7 +29,24 @@
                 <li>
                     Digite seu nome de usuário
                 </li>
-                <input type="text" id="user_name" name="user_name">
+                <input type="text" id="user_name" name="user_name" >
+                <li>
+                    Digite seu email
+                </li>
+                <input type="email" id="email" name="email">
+                <li>
+                    Digite uma Senha
+                </li>
+                <input type="password" id="user_password" name="user_password" required >
+                <li>
+                    Digite sua senha Novamente
+                </li>
+                <input type="password" id="user_password2" name="user_password2" required ><br />
+                <button id="btnCriar">Criar Conta</button>
+            </ul>
+        </div>
+        <div class="form_entrar_conta">
+            <ul>
                 <li>
                     Digite seu email
                 </li>
@@ -41,8 +58,8 @@
                 <li>
                     Digite sua senha Novamente
                 </li>
-                    <input type="password" id="user_password2" name="user_password2" required><br/>
-                    <button type="submit">Criar Conta</button>
+                <input type="password" id="user_password2" name="user_password2" required><br />
+                <button type="submit">Entrar Conta</button>
             </ul>
         </div>
     </div>

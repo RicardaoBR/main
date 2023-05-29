@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    height: auto;
+    overflow: auto;
+    text-align: center;
+}
+
+body {
+    background-image: url(/Midia/wallpaerLoginPage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+}
+
+ul {
+    margin: 25%;
+    background-image: linear-gradient(to right, #538681, white);
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
+
+ul input {
+    padding-right: 20%;
+    display: block;
+    padding-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    padding:10px;
+    padding-right: 300px;
+    border: none;
+}
+
+ul button {
+    padding-top: 20px;
+    padding-right:400px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    background-image: linear-gradient(to right, #538681, white);
+}
+
+.form_criar_conta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form_entrar_conta {
+    display: none;
+}
