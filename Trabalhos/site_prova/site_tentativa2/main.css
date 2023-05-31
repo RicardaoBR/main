@@ -11,11 +11,6 @@ header{
     font-size: 30px;
 }
 
-
-
-.logo{
-}
-
 .logo img{
     width: 50px ;
 }
@@ -29,6 +24,11 @@ header{
 
 #seçoes img{
     width: 70px;
+}
+
+#seçoes button{
+    border: none;
+    background-color: rgb(255, 166, 0);
 }
 
 li{

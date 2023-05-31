@@ -37,7 +37,6 @@ ul input {
     padding-bottom: 20px;
     border-radius: 4px;
     display: flex;
-    text-align: center;
     padding: 10px;
     padding-right: 300px;
     border: none;
@@ -52,8 +51,8 @@ ul button {
 
 ul button:hover {
     transition: 500ms;
-    background-color: rgb(35, 43, 87);
-    
+    background-color: rgb(68, 74, 103);
+    color: #fff;
 }
 
 .form_criar_conta {

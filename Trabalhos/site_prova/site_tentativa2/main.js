@@ -56,6 +56,10 @@ $(document).ready(function () {
         $('#seçao_livros_pagina').hide(1000);
     })
 
+    $('#botao_abrir_seçoes').click('submit', function(e){
+        $('seçoes').slideUp();
+    })
+
 
 
 
