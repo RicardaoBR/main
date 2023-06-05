@@ -3,35 +3,48 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    position: relative;
 }
 
-header{
-    background-color: rgb(255, 166, 0);
-    text-align: center;
+header {
+    background-image: linear-gradient(to right, #3E46A5, #fff);
     font-size: 30px;
 }
 
-.logo img{
-    width: 50px ;
+.logo {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
 }
 
-#seçoes{
+.logo img {
+    width: 70px;
+    align-self: center;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+#seçoes {
     font-size: 20px;
-    background-color: rgb(255, 166, 0);
+    background-color: #3E46A5;
     width: 100px;
     padding-left: 15px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-#seçoes img{
+#seçoes img {
     width: 70px;
+    cursor: pointer;
 }
 
-#seçoes button{
+#seçoes button {
     border: none;
-    background-color: rgb(255, 166, 0);
+    background-color: #3E46A5;
 }
 
-li{
+li {
     list-style: none;
 }
-
