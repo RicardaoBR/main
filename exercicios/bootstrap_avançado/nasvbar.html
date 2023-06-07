@@ -9,7 +9,7 @@
     <title>NavBar</title>
     <style>
         .navbar-nav .nav-link.active {
-            color: #fff;
+            color: white;
         }
 
         .nav-link {
@@ -106,6 +106,7 @@
             <header class="toast-header">
                 <strong>Importante</strong>
             </header>
+
             <body class="toast-body">
                 <p>Você tem 12 mensagens não lidas!</p>
                 <div class="mt-2 pt-2 border-top">
@@ -123,7 +124,7 @@
 
         if (ativarToast) {
             ativarToast.addEventListener('click', function () {
-                const toast = new bootstrap.toast(mensagem);
+                const toast = new bootstrap.Toast(mensagem);
                 toast.show();
             })
         }

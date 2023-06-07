@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituição Educacional</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <style>
+        /* Estilos CSS adicionais */
+        .edit-input {
+            width: 100%;
+        }
+
+        .table-fixed {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .table-fixed td {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #calendario {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark text-white">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-center">Instituição Educacional <i class="fas fa-graduation-cap ml-2"></i></h1>
+        </div>
+    </header>
+
+    <nav class="bg-light">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Página Inicial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="mostrarCalendario()">Calendário</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Alunos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Notas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="conteudo" class="container mt-4">
+        <div id="adicionarAluno" class="mb-4">
+            <h2>Informações dos Alunos</h2>
+
+            <!-- Exemplo de formulário para adicionar um novo aluno -->
+            <form id="adicionarAlunoForm">
+                <h3>Adicionar Aluno</h3>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="matricula">Matrícula:</label>
+                    <input type="text" id="matricula" name="matricula" class="form-control" maxlength="8" required>
+                </div>
+                <div class="form-group">
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" name="curso" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </form>
+        </div>
+
+        <div id="calendario">
+        </div>
+
+        <div id="tabelaAlunos" class="mt-4">
+            <h2>Lista de Alunos</h2>
+            <table class="table table-bordered table-fixed">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>Curso</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>2021001</td>
+                        <td>Engenharia</td>
+                        <td>
+                            <button class="edit-button btn btn-primary">Editar</button>
+                            <button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Maria Santos</td>
+                        <td>2021002</td>
+                        <td>Medicina</td>
+                        <td>
+                            <button class="edit-button btn btn-primary">Editar</button>
+                            <button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-white py-3">
+        <div class="container text-center">
+            &copy; 2023 Instituição Educacional. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script>
+        // JavaScript para adicionar aluno à tabela
+        document.getElementById('adicionarAlunoForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Obter os valores dos campos do formulário
+            var nome = document.getElementById('nome').value;
+            var matricula = document.getElementById('matricula').value;
+            var curso = document.getElementById('curso').value;
+
+            // Criar uma nova linha na tabela com os dados do aluno
+            var tabela = document.getElementById('tabelaAlunos');
+            var novaLinha = tabela.insertRow(-1);
+            var colunaNome = novaLinha.insertCell(0);
+            var colunaMatricula = novaLinha.insertCell(1);
+            var colunaCurso = novaLinha.insertCell(2);
+            var colunaAcoes = novaLinha.insertCell(3);
+
+            colunaNome.innerHTML = nome;
+            colunaMatricula.innerHTML = matricula;
+            colunaCurso.innerHTML = curso;
+            colunaAcoes.innerHTML = '<button class="edit-button btn btn-primary">Editar</button> <button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>';
+
+            // Limpar os campos do formulário
+            document.getElementById('nome').value = '';
+            document.getElementById('matricula').value = '';
+            document.getElementById('curso').value = '';
+        });
+
+        // JavaScript para editar os dados do aluno
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('edit-button')) {
+                var row = event.target.parentNode.parentNode;
+                var colunas = row.getElementsByTagName('td');
+
+                for (var i = 0; i < colunas.length - 1; i++) {
+                    var valorAtual = colunas[i].innerHTML;
+                    colunas[i].innerHTML = '<input type="text" class="edit-input form-control" value="' + valorAtual + '">';
+                }
+
+                var colunaAcoes = colunas[colunas.length - 1];
+                colunaAcoes.innerHTML = '<button class="edit-button btn btn-success" onclick="salvarEdicao(this)">Pronto</button>';
+            }
+        });
+
+        // JavaScript para salvar a edição dos dados do aluno
+        function salvarEdicao(button) {
+            var row = button.parentNode.parentNode;
+            var colunas = row.getElementsByTagName('td');
+
+            for (var i = 0; i < colunas.length - 1; i++) {
+                var valorEditado = colunas[i].querySelector('.edit-input').value;
+                colunas[i].innerHTML = valorEditado;
+            }
+
+            var colunaAcoes = colunas[colunas.length - 1];
+            colunaAcoes.innerHTML = '<button class="edit-button btn btn-primary" onclick="editarAluno(this)">Editar</button> <button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>';
+        }
+
+        // JavaScript para excluir um aluno da tabela
+        function excluirAluno(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+        // JavaScript para mostrar o calendário e esconder as outras seções
+        function mostrarCalendario() {
+            document.getElementById('adicionarAluno').style.display = 'none';
+            document.getElementById('tabelaAlunos').style.display = 'none';
+            document.getElementById('calendario').style.display = 'block';
+
+        
+
+            // Inicializar o calendário usando a biblioteca FullCalendar
+            $('#calendario').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'month',
+                events: [
+                    {
+                        title: 'Evento 1',
+                        start: '2023-06-01'
+                    },
+                    {
+                        title: 'Evento 2',
+                        start: '2023-06-05',
+                        end: '2023-06-07'
+                    }
+                ]
+            });
+        }
+    </script>
+</body>
+
+</html>
