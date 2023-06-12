@@ -4,27 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Vanguarda</title>
+    <title>Instituição Educacional</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <style>
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-        @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
-
-        header {
-            padding: 10px;
+        a{
+            color: black;    
         }
 
-        img {
-            width: 100%;
-            height: 100%;
+        header{
+            padding: 10px;
         }
 
         .edit-input {
@@ -42,8 +36,6 @@
             hyphens: auto;
         }
 
-
-
         .footer {
             position: fixed;
             left: 0;
@@ -51,6 +43,7 @@
             width: 100%;
             background-color: #343a40;
             color: #ffffff;
+            padding: 10px;
             text-align: center;
             z-index: 1;
         }
@@ -60,26 +53,12 @@
             margin: 0 auto;
         }
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Bebas Neue', sans-serif;
+        h1,h2,h3{
+            font-family: 'Diphylleia', serif;
         }
 
-        .foto-universidade {
-            font-family: 'Tilt Prism', cursive;
-            font-size: 70px;
-            text-align: center;
-            background-color: #343a40;
-            color: white;
-            border-radius: 10px 10px 0px 0px;
-        }
-
-        .sobreUniversidade{
-            background-color: #343a40;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
+        button{
+            margin-right: px;
         }
     </style>
 </head>
@@ -87,7 +66,7 @@
 <body>
     <header class="bg-dark text-white">
         <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="text-center" class="logo">Colégio Vanguarda <i class="bi bi-mortarboard-fill"></i></h1>
+            <h1 class="text-center">Instituição Educacional <i class="bi bi-mortarboard-fill"></i></h1>
         </div>
     </header>
 
@@ -95,118 +74,39 @@
         <div class="container">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#" onclick="inicioSobre()">Página Inicial</a>
+                    <a class="nav-link" href="#">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#" onclick="mostrarAlunos()">Alunos</a>
+                    <a class="nav-link" href="#" onclick="mostrarAlunos()">Alunos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#" onclick="mostrarCalendario()">Calendário</a>
+                    <a class="nav-link" href="#" onclick="mostrarCalendario()">Calendário</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Notas</a>
+                    <a class="nav-link" href="#">Notas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Sair</a>
+                    <a class="nav-link" href="#">Sair</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div id="conteudo" class="container mt-4">
-        <div id="adicionarAluno" class="mb-4">
-            <form id="adicionarAlunoForm">
-                <h1>Adicionar Aluno</h1>
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="matricula">Matrícula:</label>
-                    <input type="text" id="matricula" name="matricula" class="form-control" maxlength="8" required>
-                </div>
-                <div class="form-group">
-                    <label for="curso">Curso:</label>
-                    <input type="text" id="curso" name="curso" class="form-control" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Adicionar</button>
-            </form>
-        </div>
-
         <div id="inicioSobre" style="display: none;">
-            <div class="foto-universidade">Universidade </div>
-            <img src="/Midia/universidade-vanguarda-exemplo3.png" alt="foto_universidade">
-            <hr>
-            <div class="sobreUniversidade">
-            <h2>Escola Vanguarda</h2>
-            <p>Bem-vindo à Escola Vanguarda Imaginária, um lugar onde os sonhos se tornam realidade e as mentes jovens
-                são
-                nutridas para alcançar seu pleno potencial. Nossa escola é uma instituição fictícia dedicada à
-                excelência
-                acadêmica e ao crescimento pessoal dos alunos. Aqui, acreditamos que cada indivíduo tem habilidades
-                únicas e
-                a capacidade de fazer a diferença no mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eveniet illo, provident quibusdam odit quasi porro dolorem reprehenderit sunt deserunt tenetur dolores
-                dolor quidem et architecto illum maxime ipsum nemo ex! </p>
-            <hr>
-            <h2>Nossa Missão</h2>
-            <p>A missão da Escola Secundária Imaginária é proporcionar um ambiente de aprendizado estimulante, onde os
-                estudantes possam desenvolver suas habilidades intelectuais, criativas e sociais. Buscamos encorajar o
-                pensamento crítico, a colaboração e a inovação, preparando nossos alunos para enfrentar os desafios do
-                mundo
-                em constante evolução.</p>
-            <hr>
-            <h2>Instalações e Recursos</h2>
-            <p>Nossa escola possui instalações modernas e recursos avançados, projetados para promover um ambiente de
-                aprendizado inspirador. Temos laboratórios de ciências totalmente equipados, uma biblioteca abrangente,
-                salas de aula interativas e espaços ao ar livre para atividades esportivas e recreativas. Além disso,
-                investimos em tecnologia de ponta para apoiar o ensino e a pesquisa dos alunos.</p>
-            <hr>
-            <h2>Corpo Docente Excepcional</h2>
-            <p>Na Escola Secundária Imaginária, nos orgulhamos de nossa equipe de educadores apaixonados e dedicados.
-                Nossos professores são especialistas em suas áreas de atuação e estão empenhados em fornecer uma
-                educação de
-                qualidade aos alunos. Eles são mentores atenciosos, orientadores talentosos e estão sempre prontos para
-                apoiar e inspirar os estudantes em sua jornada educacional.</p>
-            <hr>
-            <h2>Envolvimento Comunitário</h2>
-            <p>Acreditamos que a educação vai além da sala de aula, por isso incentivamos o envolvimento dos alunos na
-                comunidade local. Nossos estudantes participam de projetos de serviço comunitário, eventos culturais e
-                atividades extracurriculares enriquecedoras. Essas experiências ajudam a desenvolver habilidades de
-                liderança, empatia e responsabilidade cívica, preparando-os para se tornarem cidadãos comprometidos e
-                conscientes.</p>
-            <hr>
-            <h2>Acontecimentos Históricos</h2>
-            <h3>Fundação da Escola Secundária Imaginária (1950)</h3>
-            <p>A Escola Secundária Imaginária foi fundada em 1950 por um grupo de visionários educadores que buscavam
-                criar
-                um ambiente de aprendizado inovador para os jovens. Inspirados pela ideia de que a educação pode mudar
-                vidas, eles estabeleceram a escola com a missão de oferecer oportunidades iguais para todos os
-                estudantes e
-                prepará-los para os desafios do futuro.</p>
-            <hr>
-            <h3>Primeira Graduação de Destaque (1965)</h3>
-            <p>Em 1965, a Escola Secundária Imaginária celebrou sua primeira turma de formandos notáveis.</p>
-        </div>
+            <h2>Instituição Educacional</h2>
+            <p>Bem-vindo à Instituição Educacional, uma escola renomada com uma história de excelência acadêmica e dedicação aos alunos.</p>
+            <p>Nossa instituição foi fundada em 1920 por um grupo de educadores visionários que buscavam fornecer uma educação de qualidade e preparar os alunos para um futuro brilhante.</p>
+            <p>Ao longo dos anos, nossos alunos alcançaram grandes realizações em diversas áreas, desde ciências e artes até esportes e empreendedorismo.</p>
+            <p>Estamos orgulhosos de nosso corpo docente altamente qualificado e de nossas instalações modernas, que oferecem um ambiente de aprendizado estimulante.</p>
+            <p>Na Instituição Educacional, valorizamos a individualidade e buscamos desenvolver as habilidades e talentos únicos de cada aluno. Nossos programas acadêmicos abrangentes e nossas atividades extracurriculares diversificadas proporcionam uma educação completa e holística.</p>
+            <p>Estamos comprometidos em preparar os alunos para se tornarem cidadãos responsáveis, pensadores críticos e líderes em suas comunidades.</p>
         </div>
 
         <div id="calendario" style="display: none;">
-            <br>
-            <h2>Adicionar Evento</h2>
-            <form id="eventForm">
-                <div class="form-group">
-                    <label for="eventName">Nome do Evento:</label>
-                    <input type="text" class="form-control" id="eventName" required>
-                </div>
-                <div class="form-group">
-                    <label for="eventDate">Data do Evento:</label>
-                    <input type="date" class="form-control" id="eventDate" required>
-                </div>
-                <button type="button" class="btn btn-primary" id="adicionarEvento">Adicionar</button>
-            </form>
         </div>
 
-        <div id="tabelaAlunos" class="mt-4">
+        <div id="tabelaAlunos" style="display: none;">
             <h2>Lista de Alunos</h2>
             <table class="table table-bordered table-fixed">
                 <thead class="thead-dark">
@@ -327,7 +227,8 @@
             }
 
             var colunaAcoes = colunas[colunas.length - 1];
-            colunaAcoes.innerHTML = '<button class="edit-button btn btn-primary" onclick="editarAluno(this)">Editar</button> <button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>';
+            colunaAcoes.innerHTML = '<button class="edit-button btn btn-primary">Editar</button>' +
+                '<button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>';
         }
 
         // JavaScript para excluir um aluno da tabela
@@ -336,37 +237,45 @@
             row.parentNode.removeChild(row);
         }
 
-        // JavaScript para mostrar o calendário e esconder as outras seções
+        // JavaScript para alternar a exibição dos conteúdos
+        function mostrarAlunos() {
+            document.getElementById('instituicao').style.display = 'none';
+            document.getElementById('calendario').style.display = 'none';
+            document.getElementById('tabelaAlunos').style.display = 'block';
+        }
+
         function mostrarCalendario() {
-            document.getElementById('inicioSobre').style.display = 'none';
-            document.getElementById('adicionarAluno').style.display = 'none';
+            document.getElementById('instituicao').style.display = 'none';
             document.getElementById('tabelaAlunos').style.display = 'none';
             document.getElementById('calendario').style.display = 'block';
-            // Inicializar o calendário usando a biblioteca FullCalendar
+
+            // Inicializar o calendário
             $('#calendario').fullCalendar({
+                defaultView: 'month',
+                height: 600,
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                defaultView: 'month',
                 events: [
+                    {
+                        title: 'Evento 1',
+                        start: '2023-06-01',
+                        end: '2023-06-03'
+                    },
+                    {
+                        title: 'Evento 2',
+                        start: '2023-06-05',
+                        end: '2023-06-07'
+                    },
+                    {
+                        title: 'Evento 3',
+                        start: '2023-06-12',
+                        end: '2023-06-15'
+                    }
                 ]
             });
-        }
-
-        function mostrarAlunos() {
-            document.getElementById('inicioSobre').style.display = 'none';
-            document.getElementById('adicionarAluno').style.display = 'block';
-            document.getElementById('tabelaAlunos').style.display = 'block';
-            document.getElementById('calendario').style.display = 'none';
-        }
-
-        function inicioSobre() {
-            document.getElementById('inicioSobre').style.display = 'block';
-            document.getElementById('adicionarAluno').style.display = 'none';
-            document.getElementById('tabelaAlunos').style.display = 'none';
-            document.getElementById('calendario').style.display = 'none';
         }
     </script>
 </body>

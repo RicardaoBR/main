@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css'>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Adicionar Evento</h2>
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="eventName">Nome do Evento:</label>
+                <input type="text" class="form-control" id="eventName" required>
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Data do Evento:</label>
+                <input type="date" class="form-control" id="eventDate" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+        <div id="calendar"></div>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+
+    <script>
+        $(document).ready(function () {
+            // Inicialize o calendário
+            $('#calendar').fullCalendar({
+                // Opções do calendário
+                // ...
+            });
+
+            // Manipulador de envio do formulário
+            $('#eventForm').submit(function (e) {
+                e.preventDefault();
+
+                // Obtenha os valores dos campos do formulário
+                var eventName = $('#eventName').val();
+                var eventDate = $('#eventDate').val();
+
+                // Crie um objeto de evento com os dados do formulário
+                var event = {
+                    title: eventName,
+                    start: eventDate
+                };
+
+                // Adicione o evento ao calendário
+                $('#calendar').fullCalendar('renderEvent', event, true);
+
+                // Limpe o formulário
+                $('#eventName').val('');
+                $('#eventDate').val('');
+            });
+        });
+    </script>
+</body>
+
+</html>
