@@ -18,8 +18,9 @@
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
         @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
 
-        header {
-            padding: 10px;
+        header h1 {
+            font-size: 50px;
+            margin-top: 10px;
         }
 
         img {
@@ -75,11 +76,23 @@
             border-radius: 10px 10px 0px 0px;
         }
 
-        .sobreUniversidade{
+        .sobreUniversidade {
             background-color: #343a40;
             color: white;
             padding: 20px;
             border-radius: 10px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .green {
+            color: green;
         }
     </style>
 </head>
@@ -106,9 +119,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#">Notas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Sair</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -133,61 +143,122 @@
             </form>
         </div>
 
+        <div id="notaAlunos" style="display: none;">
+            <div class="container">
+                <h1>Seção de Notas</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Adicionar Notas</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="subject">Matéria:</label>
+                                <select class="form-control" id="subject">
+                                    <option value="Matemática">Matemática</option>
+                                    <option value="Língua Portuguesa">Língua Portuguesa</option>
+                                    <option value="História">História</option>
+                                    <option value="Física">Física</option>
+                                    <option value="Biologia">Biologia</option>
+                                    <option value="Química">Química</option>
+                                    <option value="Geografia">Geografia</option>
+                                    <option value="Filosofia">Filosofia</option>
+                                    <option value="Educação Física">Educação Física</option>
+                                    <option value="Sociologia">Sociologia</option>
+                                    <option value="Literatura">Literatura</option>
+                                    <option value="Artes">Artes</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="grade">Nota:</label>
+                                <input type="number" class="form-control" id="grade" min="0" max="10">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="addGrade()">Adicionar</button>
+                        </form>
+                        <hr>
+                        <h3>Notas Adicionadas</h3>
+                        <div id="grades"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Média</h3>
+                        <div id="average"></div>
+                    </div>
+                </div>
+                <hr>
+                <h3>Gráficos de Notas</h3>
+                <div id="gradeCharts" class="row"></div>
+            </div>
+        </div>
+
         <div id="inicioSobre" style="display: none;">
             <div class="foto-universidade">Universidade </div>
             <img src="/Midia/universidade-vanguarda-exemplo3.png" alt="foto_universidade">
             <hr>
             <div class="sobreUniversidade">
-            <h2>Escola Vanguarda</h2>
-            <p>Bem-vindo à Escola Vanguarda Imaginária, um lugar onde os sonhos se tornam realidade e as mentes jovens
-                são
-                nutridas para alcançar seu pleno potencial. Nossa escola é uma instituição fictícia dedicada à
-                excelência
-                acadêmica e ao crescimento pessoal dos alunos. Aqui, acreditamos que cada indivíduo tem habilidades
-                únicas e
-                a capacidade de fazer a diferença no mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eveniet illo, provident quibusdam odit quasi porro dolorem reprehenderit sunt deserunt tenetur dolores
-                dolor quidem et architecto illum maxime ipsum nemo ex! </p>
-            <hr>
-            <h2>Nossa Missão</h2>
-            <p>A missão da Escola Secundária Imaginária é proporcionar um ambiente de aprendizado estimulante, onde os
-                estudantes possam desenvolver suas habilidades intelectuais, criativas e sociais. Buscamos encorajar o
-                pensamento crítico, a colaboração e a inovação, preparando nossos alunos para enfrentar os desafios do
-                mundo
-                em constante evolução.</p>
-            <hr>
-            <h2>Instalações e Recursos</h2>
-            <p>Nossa escola possui instalações modernas e recursos avançados, projetados para promover um ambiente de
-                aprendizado inspirador. Temos laboratórios de ciências totalmente equipados, uma biblioteca abrangente,
-                salas de aula interativas e espaços ao ar livre para atividades esportivas e recreativas. Além disso,
-                investimos em tecnologia de ponta para apoiar o ensino e a pesquisa dos alunos.</p>
-            <hr>
-            <h2>Corpo Docente Excepcional</h2>
-            <p>Na Escola Secundária Imaginária, nos orgulhamos de nossa equipe de educadores apaixonados e dedicados.
-                Nossos professores são especialistas em suas áreas de atuação e estão empenhados em fornecer uma
-                educação de
-                qualidade aos alunos. Eles são mentores atenciosos, orientadores talentosos e estão sempre prontos para
-                apoiar e inspirar os estudantes em sua jornada educacional.</p>
-            <hr>
-            <h2>Envolvimento Comunitário</h2>
-            <p>Acreditamos que a educação vai além da sala de aula, por isso incentivamos o envolvimento dos alunos na
-                comunidade local. Nossos estudantes participam de projetos de serviço comunitário, eventos culturais e
-                atividades extracurriculares enriquecedoras. Essas experiências ajudam a desenvolver habilidades de
-                liderança, empatia e responsabilidade cívica, preparando-os para se tornarem cidadãos comprometidos e
-                conscientes.</p>
-            <hr>
-            <h2>Acontecimentos Históricos</h2>
-            <h3>Fundação da Escola Secundária Imaginária (1950)</h3>
-            <p>A Escola Secundária Imaginária foi fundada em 1950 por um grupo de visionários educadores que buscavam
-                criar
-                um ambiente de aprendizado inovador para os jovens. Inspirados pela ideia de que a educação pode mudar
-                vidas, eles estabeleceram a escola com a missão de oferecer oportunidades iguais para todos os
-                estudantes e
-                prepará-los para os desafios do futuro.</p>
-            <hr>
-            <h3>Primeira Graduação de Destaque (1965)</h3>
-            <p>Em 1965, a Escola Secundária Imaginária celebrou sua primeira turma de formandos notáveis.</p>
-        </div>
+                <h2>Escola Vanguarda</h2>
+                <p>Bem-vindo à Escola Vanguarda Imaginária, um lugar onde os sonhos se tornam realidade e as mentes
+                    jovens
+                    são
+                    nutridas para alcançar seu pleno potencial. Nossa escola é uma instituição fictícia dedicada à
+                    excelência
+                    acadêmica e ao crescimento pessoal dos alunos. Aqui, acreditamos que cada indivíduo tem habilidades
+                    únicas e
+                    a capacidade de fazer a diferença no mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eveniet illo, provident quibusdam odit quasi porro dolorem reprehenderit sunt deserunt tenetur
+                    dolores
+                    dolor quidem et architecto illum maxime ipsum nemo ex! </p>
+                <hr>
+                <h2>Nossa Missão</h2>
+                <p>A missão da Escola Secundária Imaginária é proporcionar um ambiente de aprendizado estimulante, onde
+                    os
+                    estudantes possam desenvolver suas habilidades intelectuais, criativas e sociais. Buscamos encorajar
+                    o
+                    pensamento crítico, a colaboração e a inovação, preparando nossos alunos para enfrentar os desafios
+                    do
+                    mundo
+                    em constante evolução.</p>
+                <hr>
+                <h2>Instalações e Recursos</h2>
+                <p>Nossa escola possui instalações modernas e recursos avançados, projetados para promover um ambiente
+                    de
+                    aprendizado inspirador. Temos laboratórios de ciências totalmente equipados, uma biblioteca
+                    abrangente,
+                    salas de aula interativas e espaços ao ar livre para atividades esportivas e recreativas. Além
+                    disso,
+                    investimos em tecnologia de ponta para apoiar o ensino e a pesquisa dos alunos.</p>
+                <hr>
+                <h2>Corpo Docente Excepcional</h2>
+                <p>Na Escola Secundária Imaginária, nos orgulhamos de nossa equipe de educadores apaixonados e
+                    dedicados.
+                    Nossos professores são especialistas em suas áreas de atuação e estão empenhados em fornecer uma
+                    educação de
+                    qualidade aos alunos. Eles são mentores atenciosos, orientadores talentosos e estão sempre prontos
+                    para
+                    apoiar e inspirar os estudantes em sua jornada educacional.</p>
+                <hr>
+                <h2>Envolvimento Comunitário</h2>
+                <p>Acreditamos que a educação vai além da sala de aula, por isso incentivamos o envolvimento dos alunos
+                    na
+                    comunidade local. Nossos estudantes participam de projetos de serviço comunitário, eventos culturais
+                    e
+                    atividades extracurriculares enriquecedoras. Essas experiências ajudam a desenvolver habilidades de
+                    liderança, empatia e responsabilidade cívica, preparando-os para se tornarem cidadãos comprometidos
+                    e
+                    conscientes.</p>
+                <hr>
+                <h2>Acontecimentos Históricos</h2>
+                <h3>Fundação da Escola Secundária Imaginária (1950)</h3>
+                <p>A Escola Secundária Imaginária foi fundada em 1950 por um grupo de visionários educadores que
+                    buscavam
+                    criar
+                    um ambiente de aprendizado inovador para os jovens. Inspirados pela ideia de que a educação pode
+                    mudar
+                    vidas, eles estabeleceram a escola com a missão de oferecer oportunidades iguais para todos os
+                    estudantes e
+                    prepará-los para os desafios do futuro.</p>
+                <hr>
+                <h3>Primeira Graduação de Destaque (1965)</h3>
+                <p>Em 1965, a Escola Secundária Imaginária celebrou sua primeira turma de formandos notáveis.</p>
+            </div>
         </div>
 
         <div id="calendario" style="display: none;">
@@ -312,7 +383,7 @@
                 colunas[2].innerHTML = '<input type="text" class="edit-input form-control" value="' + valorAtual + '">';
 
                 var colunaAcoes = colunas[colunas.length - 1];
-                colunaAcoes.innerHTML = '<button class="edit-button btn btn-success" onclick="salvarEdicao(this)">Pronto</button>';
+                colunaAcoes.innerHTML = '<button class="edit-button btn btn-success" style="margin-right: 20px;"  onclick="salvarEdicao(this)">Pronto</button>';
             }
         });
 

@@ -1,0 +1,13 @@
+@use 'produtos';
+@use 'reset';
+
+$corPrincipal: #eee;
+$corDoTexto: #111;
+
+body{
+    background-color: $corPrincipal;
+}
+
+header{
+    color: $corPrincipal;
+}
