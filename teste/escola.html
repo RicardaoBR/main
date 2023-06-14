@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Vanguarda</title>
+    <title>Universidade Vanguarda</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,19 +41,6 @@
             overflow-wrap: break-word;
             word-wrap: break-word;
             hyphens: auto;
-        }
-
-
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            z-index: 1;
         }
 
         #calendario {
@@ -117,14 +104,46 @@
                     <a class="nav-link text-dark" href="#" onclick="mostrarCalendario()">Calendário</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Notas</a>
+                    <a class="nav-link text-dark" href="#" onclick="mostrarFeedback()">Feedback</a>
                 </li>
             </ul>
         </div>
     </nav>
-
+    <div id="feedback" style="display: none;">
+        <div class="container mt-5" >
+            <h2>Formulário de Feedback</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nome2">Nome:</label>
+                    <input type="text" required class="form-control" id="nome2" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" required class="form-control" id="email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <select required class="form-control" id="categoria">
+                        <option value="elogio">Elogio</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="problema">Problema</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea required class="form-control" id="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="newsletter">
+                    <label class="form-check-label" for="newsletter">Desejo receber a newsletter</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
     <div id="conteudo" class="container mt-4">
-        <div id="adicionarAluno" class="mb-4">
+        <div id="adicionarAluno" style="display: none;" class="mb-4">
             <form id="adicionarAlunoForm">
                 <h1>Adicionar Aluno</h1>
                 <div class="form-group">
@@ -143,141 +162,7 @@
             </form>
         </div>
 
-        <div id="notaAlunos" style="display: none;">
-            <div class="container">
-                <h1>Seção de Notas</h1>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>Adicionar Notas</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="subject">Matéria:</label>
-                                <select class="form-control" id="subject">
-                                    <option value="Matemática">Matemática</option>
-                                    <option value="Língua Portuguesa">Língua Portuguesa</option>
-                                    <option value="História">História</option>
-                                    <option value="Física">Física</option>
-                                    <option value="Biologia">Biologia</option>
-                                    <option value="Química">Química</option>
-                                    <option value="Geografia">Geografia</option>
-                                    <option value="Filosofia">Filosofia</option>
-                                    <option value="Educação Física">Educação Física</option>
-                                    <option value="Sociologia">Sociologia</option>
-                                    <option value="Literatura">Literatura</option>
-                                    <option value="Artes">Artes</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="grade">Nota:</label>
-                                <input type="number" class="form-control" id="grade" min="0" max="10">
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="addGrade()">Adicionar</button>
-                        </form>
-                        <hr>
-                        <h3>Notas Adicionadas</h3>
-                        <div id="grades"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>Média</h3>
-                        <div id="average"></div>
-                    </div>
-                </div>
-                <hr>
-                <h3>Gráficos de Notas</h3>
-                <div id="gradeCharts" class="row"></div>
-            </div>
-        </div>
-
-        <div id="inicioSobre" style="display: none;">
-            <div class="foto-universidade">Universidade </div>
-            <img src="/Midia/universidade-vanguarda-exemplo3.png" alt="foto_universidade">
-            <hr>
-            <div class="sobreUniversidade">
-                <h2>Escola Vanguarda</h2>
-                <p>Bem-vindo à Escola Vanguarda Imaginária, um lugar onde os sonhos se tornam realidade e as mentes
-                    jovens
-                    são
-                    nutridas para alcançar seu pleno potencial. Nossa escola é uma instituição fictícia dedicada à
-                    excelência
-                    acadêmica e ao crescimento pessoal dos alunos. Aqui, acreditamos que cada indivíduo tem habilidades
-                    únicas e
-                    a capacidade de fazer a diferença no mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eveniet illo, provident quibusdam odit quasi porro dolorem reprehenderit sunt deserunt tenetur
-                    dolores
-                    dolor quidem et architecto illum maxime ipsum nemo ex! </p>
-                <hr>
-                <h2>Nossa Missão</h2>
-                <p>A missão da Escola Secundária Imaginária é proporcionar um ambiente de aprendizado estimulante, onde
-                    os
-                    estudantes possam desenvolver suas habilidades intelectuais, criativas e sociais. Buscamos encorajar
-                    o
-                    pensamento crítico, a colaboração e a inovação, preparando nossos alunos para enfrentar os desafios
-                    do
-                    mundo
-                    em constante evolução.</p>
-                <hr>
-                <h2>Instalações e Recursos</h2>
-                <p>Nossa escola possui instalações modernas e recursos avançados, projetados para promover um ambiente
-                    de
-                    aprendizado inspirador. Temos laboratórios de ciências totalmente equipados, uma biblioteca
-                    abrangente,
-                    salas de aula interativas e espaços ao ar livre para atividades esportivas e recreativas. Além
-                    disso,
-                    investimos em tecnologia de ponta para apoiar o ensino e a pesquisa dos alunos.</p>
-                <hr>
-                <h2>Corpo Docente Excepcional</h2>
-                <p>Na Escola Secundária Imaginária, nos orgulhamos de nossa equipe de educadores apaixonados e
-                    dedicados.
-                    Nossos professores são especialistas em suas áreas de atuação e estão empenhados em fornecer uma
-                    educação de
-                    qualidade aos alunos. Eles são mentores atenciosos, orientadores talentosos e estão sempre prontos
-                    para
-                    apoiar e inspirar os estudantes em sua jornada educacional.</p>
-                <hr>
-                <h2>Envolvimento Comunitário</h2>
-                <p>Acreditamos que a educação vai além da sala de aula, por isso incentivamos o envolvimento dos alunos
-                    na
-                    comunidade local. Nossos estudantes participam de projetos de serviço comunitário, eventos culturais
-                    e
-                    atividades extracurriculares enriquecedoras. Essas experiências ajudam a desenvolver habilidades de
-                    liderança, empatia e responsabilidade cívica, preparando-os para se tornarem cidadãos comprometidos
-                    e
-                    conscientes.</p>
-                <hr>
-                <h2>Acontecimentos Históricos</h2>
-                <h3>Fundação da Escola Secundária Imaginária (1950)</h3>
-                <p>A Escola Secundária Imaginária foi fundada em 1950 por um grupo de visionários educadores que
-                    buscavam
-                    criar
-                    um ambiente de aprendizado inovador para os jovens. Inspirados pela ideia de que a educação pode
-                    mudar
-                    vidas, eles estabeleceram a escola com a missão de oferecer oportunidades iguais para todos os
-                    estudantes e
-                    prepará-los para os desafios do futuro.</p>
-                <hr>
-                <h3>Primeira Graduação de Destaque (1965)</h3>
-                <p>Em 1965, a Escola Secundária Imaginária celebrou sua primeira turma de formandos notáveis.</p>
-            </div>
-        </div>
-
-        <div id="calendario" style="display: none;">
-            <br>
-            <h2>Adicionar Evento</h2>
-            <form id="eventForm">
-                <div class="form-group">
-                    <label for="eventName">Nome do Evento:</label>
-                    <input type="text" class="form-control" id="eventName" required>
-                </div>
-                <div class="form-group">
-                    <label for="eventDate">Data do Evento:</label>
-                    <input type="date" class="form-control" id="eventDate" required>
-                </div>
-                <button type="button" class="btn btn-primary" id="adicionarEvento">Adicionar</button>
-            </form>
-        </div>
-
-        <div id="tabelaAlunos" class="mt-4">
+        <div id="tabelaAlunos" style="display: none;" class="mt-4">
             <h2>Lista de Alunos</h2>
             <table class="table table-bordered table-fixed">
                 <thead class="thead-dark">
@@ -328,13 +213,108 @@
                 </tbody>
             </table>
         </div>
-    </div>
 
-    <footer class="footer bg-dark text-white py-3">
-        <div class="container text-center">
-            &copy; 2023 Instituição Educacional / Todos os direitos reservados.
+        <div id="inicioSobre" style="display: block;">
+            <div class="container">
+                <div class="foto-universidade">Universidade Vanguarda</div>
+                <img src="/Midia/universidade-vanguarda-exemplo3.png" alt="foto_universidade">
+                <hr>
+                <div class="sobreUniversidade">
+                    <h2>Universidade Vanguarda</h2>
+                    <p>Bem-vindo à Universidade Vanguarda um lugar onde os sonhos se tornam realidade e as mentes
+                        jovens
+                        são
+                        nutridas para alcançar seu pleno potencial. Nossa escola é uma instituição fictícia dedicada à
+                        excelência
+                        acadêmica e ao crescimento pessoal dos alunos. Aqui, acreditamos que cada indivíduo tem
+                        habilidades
+                        únicas e
+                        a capacidade de fazer a diferença no mundo. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit.
+                        Eveniet illo, provident quibusdam odit quasi porro dolorem reprehenderit sunt deserunt tenetur
+                        dolores
+                        dolor quidem et architecto illum maxime ipsum nemo ex! </p>
+                    <hr>
+                    <h2>Nossa Missão</h2>
+                    <p>A missão da Vanguarda é proporcionar um ambiente de aprendizado estimulante,
+                        onde
+                        os
+                        estudantes possam desenvolver suas habilidades intelectuais, criativas e sociais. Buscamos
+                        encorajar
+                        o
+                        pensamento crítico, a colaboração e a inovação, preparando nossos alunos para enfrentar os
+                        desafios
+                        do
+                        mundo
+                        em constante evolução.</p>
+                    <hr>
+                    <h2>Instalações e Recursos</h2>
+                    <p>Nossa Universidade possui instalações modernas e recursos avançados, projetados para promover um
+                        ambiente
+                        de
+                        aprendizado inspirador. Temos laboratórios de ciências totalmente equipados, uma biblioteca
+                        abrangente,
+                        salas de aula interativas e espaços ao ar livre para atividades esportivas e recreativas. Além
+                        disso,
+                        investimos em tecnologia de ponta para apoiar o ensino e a pesquisa dos alunos.</p>
+                    <hr>
+                    <h2>Corpo Docente Excepcional</h2>
+                    <p>Na Universidade Vanguarda, nos orgulhamos de nossa equipe de educadores apaixonados e
+                        dedicados.
+                        Nossos professores são especialistas em suas áreas de atuação e estão empenhados em fornecer uma
+                        educação de
+                        qualidade aos alunos. Eles são mentores atenciosos, orientadores talentosos e estão sempre
+                        prontos
+                        para
+                        apoiar e inspirar os estudantes em sua jornada educacional.</p>
+                    <hr>
+                    <h2>Envolvimento Comunitário</h2>
+                    <p>Acreditamos que a educação vai além da sala de aula, por isso incentivamos o envolvimento dos
+                        alunos
+                        na
+                        comunidade local. Nossos estudantes participam de projetos de serviço comunitário, eventos
+                        culturais
+                        e
+                        atividades extracurriculares enriquecedoras. Essas experiências ajudam a desenvolver habilidades
+                        de
+                        liderança, empatia e responsabilidade cívica, preparando-os para se tornarem cidadãos
+                        comprometidos
+                        e
+                        conscientes.</p>
+                    <hr>
+                    <h2>Acontecimentos Históricos</h2>
+                    <h3>Fundação da Universidade(1950)</h3>
+                    <p>A Universidade Vanguarda foi fundada em 1950 por um grupo de visionários educadores que
+                        buscavam
+                        criar
+                        um ambiente de aprendizado inovador para os jovens. Inspirados pela ideia de que a educação pode
+                        mudar
+                        vidas, eles estabeleceram a escola com a missão de oferecer oportunidades iguais para todos os
+                        estudantes e
+                        prepará-los para os desafios do futuro.</p>
+                    <hr>
+                    <h3>Primeira Graduação de Destaque (1965)</h3>
+                    <p>Em 1965, a Escola Secundária Imaginária celebrou sua primeira turma de formandos notáveis.</p>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <div id="calendario" style="display: none;">
+            <br>
+            <h2>Adicionar Evento</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Nome do Evento:</label>
+                    <input type="text" class="form-control" id="eventName" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Data do Evento:</label>
+                    <input type="date" class="form-control" id="eventDate" required>
+                </div>
+                <button type="button" class="btn btn-primary" id="adicionarEvento">Adicionar</button>
+            </form>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -361,7 +341,7 @@
             colunaNome.innerHTML = nome;
             colunaMatricula.innerHTML = matricula;
             colunaCurso.innerHTML = curso;
-            colunaAcoes.innerHTML = '<button class="edit-button btn btn-primary">Editar</button>' +
+            colunaAcoes.innerHTML = '<button style="margin-right:5px;"class="edit-button btn btn-primary">Editar</button>' +
                 '<button class="btn btn-danger" onclick="excluirAluno(this)">Excluir</button>';
 
             document.getElementById('nome').value = '';
@@ -413,6 +393,7 @@
             document.getElementById('adicionarAluno').style.display = 'none';
             document.getElementById('tabelaAlunos').style.display = 'none';
             document.getElementById('calendario').style.display = 'block';
+            document.getElementById('feedback').style.display = 'none';
             // Inicializar o calendário usando a biblioteca FullCalendar
             $('#calendario').fullCalendar({
                 header: {
@@ -425,12 +406,22 @@
                 ]
             });
         }
+        
+
+        function mostrarFeedback() {
+            document.getElementById('inicioSobre').style.display = 'none';
+            document.getElementById('adicionarAluno').style.display = 'none';
+            document.getElementById('tabelaAlunos').style.display = 'none';
+            document.getElementById('calendario').style.display = 'none';
+            document.getElementById('feedback').style.display = 'block';
+        }
 
         function mostrarAlunos() {
             document.getElementById('inicioSobre').style.display = 'none';
             document.getElementById('adicionarAluno').style.display = 'block';
             document.getElementById('tabelaAlunos').style.display = 'block';
             document.getElementById('calendario').style.display = 'none';
+            document.getElementById('feedback').style.display = 'none';
         }
 
         function inicioSobre() {
@@ -438,6 +429,7 @@
             document.getElementById('adicionarAluno').style.display = 'none';
             document.getElementById('tabelaAlunos').style.display = 'none';
             document.getElementById('calendario').style.display = 'none';
+            document.getElementById('feedback').style.display = 'none';
         }
     </script>
 </body>
