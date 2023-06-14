@@ -48,6 +48,13 @@
             margin: 0 auto;
         }
 
+        #feedbackAlerta {
+            background-color: red;
+            margin-top: 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
         h1,
         h2,
         h3 {
@@ -70,16 +77,19 @@
             border-radius: 10px;
         }
 
-        .red {
-            color: red;
+        ul img{
+            width: 50px;
+            margin-right: 20px;
+            text-align: center;
         }
 
-        .yellow {
-            color: yellow;
+        li{
+            text-align: center;
+            list-style: none;
         }
 
-        .green {
-            color: green;
+        footer {
+            margin-top: 100px
         }
     </style>
 </head>
@@ -109,8 +119,9 @@
             </ul>
         </div>
     </nav>
+
     <div id="feedback" style="display: none;">
-        <div class="container mt-5" >
+        <div class="container mt-5">
             <h2>Formulário de Feedback</h2>
             <form>
                 <div class="form-group">
@@ -118,8 +129,8 @@
                     <input type="text" required class="form-control" id="nome2" placeholder="Digite seu nome">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" required class="form-control" id="email" placeholder="Digite seu email">
+                    <label for="email2">Email:</label>
+                    <input type="email" required class="form-control" id="email2" placeholder="Digite seu email">
                 </div>
                 <div class="form-group">
                     <label for="categoria">Categoria:</label>
@@ -132,16 +143,19 @@
                 </div>
                 <div class="form-group">
                     <label for="mensagem">Mensagem:</label>
-                    <textarea required class="form-control" id="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+                    <textarea required class="form-control" id="mensagem" rows="5"
+                        placeholder="Digite sua mensagem"></textarea>
+                    <h3 style="display: none;" id="feedbackAlerta">Por favor, Preencha todas as areas</h3>
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="newsletter">
                     <label class="form-check-label" for="newsletter">Desejo receber a newsletter</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" id="mandarFeedback" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
+
     <div id="conteudo" class="container mt-4">
         <div id="adicionarAluno" style="display: none;" class="mb-4">
             <form id="adicionarAlunoForm">
@@ -162,7 +176,7 @@
             </form>
         </div>
 
-        <div id="tabelaAlunos" style="display: none;" class="mt-4">
+        <div id="tabelaAlunos" style="display: none;" class="container mt-4">
             <h2>Lista de Alunos</h2>
             <table class="table table-bordered table-fixed">
                 <thead class="thead-dark">
@@ -295,26 +309,43 @@
                     <hr>
                     <h3>Primeira Graduação de Destaque (1965)</h3>
                     <p>Em 1965, a Escola Secundária Imaginária celebrou sua primeira turma de formandos notáveis.</p>
+                    <h3>Contatos</h3>
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/accounts/login/"><img src="/Midia/instagram.png" alt=""></a>
+                            <a href="https://www.youtube.com/"><img src="/Midia/youtube.png" alt=""></a>
+                            <a href="https://web.whatsapp.com/"><img src="/Midia/whatssap.png" alt=""></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <div id="calendario" style="display: none;">
-            <br>
-            <h2>Adicionar Evento</h2>
-            <form id="eventForm">
-                <div class="form-group">
-                    <label for="eventName">Nome do Evento:</label>
-                    <input type="text" class="form-control" id="eventName" required>
-                </div>
-                <div class="form-group">
-                    <label for="eventDate">Data do Evento:</label>
-                    <input type="date" class="form-control" id="eventDate" required>
-                </div>
-                <button type="button" class="btn btn-primary" id="adicionarEvento">Adicionar</button>
-            </form>
+            <div class="container">
+                <h2 style="margin-top: 20px;">Adicionar Evento</h2>
+                <form class="eventForm" id="eventForm">
+                    <div class="form-group">
+                        <label for="eventName">Nome do Evento:</label>
+                        <input type="text" required class="form-control" id="eventName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDescription">Descrição do Evento:</label>
+                        <textarea class="form-control" required id="eventDescription" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Data do Evento:</label>
+                        <input type="date" class="form-control" id="eventDate" required>
+                    </div>
+                    <button type="submit" id="adicionarEvento" class="btn btn-primary m-1">Adicionar</button>
+                </form>
+
+                <div id="eventList" class="mt-5"></div>
+            </div>
         </div>
     </div>
+
+    <footer></footer>
 
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -350,6 +381,8 @@
 
         });
 
+
+
         // JavaScript para editar os dados do aluno
         document.addEventListener('click', function (event) {
             if (event.target.classList.contains('edit-button')) {
@@ -365,6 +398,67 @@
                 var colunaAcoes = colunas[colunas.length - 1];
                 colunaAcoes.innerHTML = '<button class="edit-button btn btn-success" style="margin-right: 20px;"  onclick="salvarEdicao(this)">Pronto</button>';
             }
+        });
+
+        $(document).ready(function () {
+            $('#adicionarEvento').click(function (event) {
+                event.preventDefault();
+
+                // Obter os valores dos campos
+                var eventName = $('#eventName').val();
+                var eventDescription = $('#eventDescription').val();
+                var eventDate = $('#eventDate').val();
+
+                // Verificando se o input está vazio
+                if (eventName === '' || eventDescription === '' || eventDate === '') {
+                    alert('Por favor, preencha todos os campos.');
+                    return;
+                }
+
+                // Criar o HTML do card do evento
+                var eventCard = `
+                <div class="card  ">
+                    <div class="card-header text-bg-dark">
+                        ${eventName}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">${eventDescription}</p>
+                    </div>
+                    <div class="card-footer text-bg-dark">
+                        <time>${eventDate}</time>
+                    </div>
+                </div>
+                `;
+
+                // Adicionar o card do evento à lista de eventos
+                $('#eventList').append(eventCard);
+
+                // Limpar os campos do formulário
+                $('#eventName').val('');
+                $('#eventDescription').val('');
+                $('#eventDate').val('');
+            });
+
+            // Mandar Feedback
+            $('#mandarFeedback').click(function (event) {
+                event.preventDefault();
+
+                var feedbackNome = $('#nome2').val();
+                var feedbackEmail = $('#email2').val();
+                var feedbackDescription = $('#mensagem').val();
+
+                if (feedbackNome === '' || feedbackEmail === '' || feedbackDescription === '') {
+                    $('#feedbackAlerta').css('display', 'block');
+                    return;
+                }else{
+                    $('#feedbackAlerta').css('display', 'none');
+                }
+                
+                $('#nome2').val('');
+                $('#email2').val('');
+                $('#mensagem').val('');
+                alert('Obrigado pelo seu Feedback!');
+            });
         });
 
         // JavaScript para salvar a edição dos dados do aluno
@@ -406,7 +500,7 @@
                 ]
             });
         }
-        
+
 
         function mostrarFeedback() {
             document.getElementById('inicioSobre').style.display = 'none';
